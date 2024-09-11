@@ -1,0 +1,17 @@
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.stretch {
+    flex-grow: 1;
+}
+
+.d {
+    outline: solid red 1px;
+}

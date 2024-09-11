@@ -1,0 +1,17 @@
+{
+    "version": "1.0.0",
+    "main": "out/index.js",
+    "license": "ISC",
+    "scripts": {
+        "start": "node out/index.js"
+    },
+    "dependencies": {
+        "@trpc/client": "^11.0.0-rc.502",
+        "@trpc/server": "^11.0.0-rc.502",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.17"
+    }
+}

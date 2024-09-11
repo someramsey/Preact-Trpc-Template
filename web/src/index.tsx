@@ -1,3 +1,4 @@
+import { render } from 'preact';
 import { LocationProvider, Route, Router, hydrate, prerender as ssr } from 'preact-iso';
 import { useState } from 'preact/hooks';
 
@@ -10,7 +11,7 @@ import { NotFound } from './pages/NotFound';
 
 import "./assets/main.css";
 
-export function Root() {
+export function App() {
     const [queryClient] = useState(() => new QueryClient());
     const [trpcClient] = useState(() =>
         trpc.createClient({
@@ -36,10 +37,12 @@ export function Root() {
     );
 }
 
-if (typeof window !== 'undefined') {
-    hydrate(<Root />, document.getElementById('app'));
+if (import.meta.env.MODE === 'development') {
+    render(<App />, document.getElementById('app'));
+} else if (typeof window !== 'undefined') {
+    hydrate(<App />, document.getElementById('app'));
 }
 
 export async function prerender(data) {
-    return await ssr(<Root {...data} />);
+    return await ssr(<App {...data} />);
 }

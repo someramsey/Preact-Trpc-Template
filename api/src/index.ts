@@ -1,12 +1,13 @@
 import "dotenv/config";
 
-import { createHTTPServer } from '@trpc/server/adapters/standalone';
 import cors from 'cors';
-import userList from './routes/userList';
+import { createHTTPServer } from '@trpc/server/adapters/standalone';
 import { router } from './trpc';
 
+import getTime from './routes/getTime';
+
 const appRouter = router({
-    userList
+    getTime
 });
 
 const server = createHTTPServer({

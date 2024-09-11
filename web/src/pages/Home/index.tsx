@@ -1,15 +1,12 @@
 import { trpc } from "../../utils/trpc";
 
 export function Home() {
-    const userListQuery = trpc.userList.useQuery("dw");
+    const getTimeQuery = trpc.getTime.useQuery("Current time");
 
     return (
         <>
-            dw
-
-            <div>
-                <p>{userListQuery.data?.dw}</p>
-            </div>
+            <h1>Home</h1>
+            <span>{getTimeQuery.data}</span>
         </>
     );
 }

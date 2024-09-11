@@ -13,10 +13,5 @@ export default defineConfig({
                 previewMiddlewareFallback: "/404",
             },
         }),
-    ],
-    server: {
-        watch: {
-            usePolling: true
-        }
-    }
+    ]
 });

@@ -1,4 +1,4 @@
-import { trpc } from "../../utils/trpc";
+import { trpc } from "@/utils/trpc";
 
 export function Home() {
     const getTimeQuery = trpc.getTime.useQuery("Current time");

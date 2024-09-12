@@ -1,0 +1,9 @@
+@echo off
+
+echo Installing dependencies for /api...
+start /wait cmd /c "echo Installing dependencies for /api... && cd api && npm install"
+
+echo Installing dependencies for /web...
+start /wait cmd /c "echo Installing dependencies for /web... && cd web && npm install"
+
+echo Setup complete...
